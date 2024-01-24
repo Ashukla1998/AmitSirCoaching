@@ -8,7 +8,6 @@ class ContactUsController < ApplicationController
       @contact = ContactUs.new(contact_params)
       if @contact.save
         flash[:success] = 'Message sent successfully!'
-        debugger
         redirect_to contact_us_thank_you_path
       else
         render :new
