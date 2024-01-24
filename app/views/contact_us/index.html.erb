@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        form {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+        <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+
+        <%= form_with(model: @contact, url: contact_us_create_path, local: true) do |form| %>
+        <div>
+            <%= form.label :name %>
+            <%= form.text_field :name, required: true %>
+        </div>
+
+        <div>
+            <%= form.label :email %>
+            <%= form.email_field :email, required: true %>
+        </div>
+
+        <div>
+            <%= form.label :number %>
+            <%= form.text_field :number, required: true %>
+        </div>
+
+        <div>
+            <%= form.label :message %>
+            <%= form.text_area :message, required: true %>
+        </div>
+
+        <div>
+            <%= form.submit 'Submit' %>
+        </div>
+        <% end %>
+
+
+</body>
+</html>

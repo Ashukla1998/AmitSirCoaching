@@ -1,0 +1,26 @@
+
+<div class="container">
+  <h1>Wikipedia Search</h1>
+
+  <%= form_tag(wikipedia_search_path, method: :get, class: "search-form") do %>
+    <%= label_tag :query, 'Enter search term:' %>
+    <%= text_field_tag :query, params[:query], class: "search-input" %>
+    <%= submit_tag 'Search', class: "search-button" %>
+  <% end %>
+
+  <% if @query %>
+    <h2>Search Results for "<%= @query %>"</h2>
+    <% if @results.any? %>
+      <ul class="search-results">
+        <% @results.each do |result| %>
+          <li>
+            <h3><%= link_to result['title'], "https://en.wikipedia.org/wiki/#{result['title']}", target: "_blank" %></h3>
+            <p><%= simple_format(result['snippet']) %></p> 
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No results found for "<%= @query %>"</p>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,41 @@
+<!-- app/views/contact_us/new.html.erb -->
+<div class="container mt-5">
+  <h1>Contact Us</h1>
+
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %> alert-dismissible fade show" role="alert">
+      <%= value %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <%= form_with(model: @contact, url: contact_us_path, local: true, html: { class: 'mb-4' }) do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, required: true, class: 'form-control' %>
+      <%= render_error_messages(@contact, :name) %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :email, class: 'form-label' %>
+      <%= form.email_field :email, required: true, class: 'form-control' %>
+      <%= render_error_messages(@contact, :email) %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :number, class: 'form-label' %>
+      <%= form.text_field :number, required: true, class: 'form-control' %>
+      <%= render_error_messages(@contact, :number) %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :message, class: 'form-label' %>
+      <%= form.text_area :message, required: true, class: 'form-control', rows: 4 %>
+      <%= render_error_messages(@contact, :message) %>
+    </div>
+
+    <div>
+      <%= form.submit 'Submit', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

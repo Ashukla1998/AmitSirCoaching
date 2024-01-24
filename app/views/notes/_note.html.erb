@@ -1,0 +1,6 @@
+<!-- app/views/notes/_note.html.erb -->
+<div class="note">
+  <h3><%= note.title %></h3>
+  <p><%= note.content %></p>
+  <%= link_to 'Download', download_note_path(note), class: 'btn btn-secondary' %>
+</div>

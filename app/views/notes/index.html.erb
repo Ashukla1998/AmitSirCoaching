@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="mt-4 mb-4">Notes</h1>
+
+  <% @notes.each do |note| %>
+    <div class="card mb-4">
+      <div class="card-body">
+        <h3 class="card-title"><%= note.title %></h3>
+        <p class="card-text"><%= note.content %></p>
+
+        <% if note.pdf_file.attached? %>
+          <div class="mb-3">
+            <embed src="<%= url_for(note.pdf_file) %>" type="application/pdf" width="100%" height="500px" />
+          </div>
+          <%= link_to 'Download PDF', url_for(note.pdf_file), class: 'btn btn-secondary mb-2', target: '_blank' %>
+        <% end %>
+
+        <%= link_to 'Download Content', download_note_path(note), class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
