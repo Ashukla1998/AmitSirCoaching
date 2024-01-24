@@ -39,6 +39,8 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
+  config.action_controller.asset_host = 'https://amitsircoaching.onrender.com/'
+
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
