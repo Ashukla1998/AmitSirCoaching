@@ -14,7 +14,7 @@ class WikipediaSearchController < ApplicationController
       action: 'query',
       format: 'json',
       list: 'search',
-      srsearch: query
+      srsearch: query 
     }
 
     data = JSON.parse(response.body)

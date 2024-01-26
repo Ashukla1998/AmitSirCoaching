@@ -7,8 +7,6 @@ class ContactUs < ApplicationRecord
     before_save :sanitize_email
   
     private
-  
-    # Ensure that email is lowercase before saving
     def sanitize_email
       self.email = email.downcase.strip
     end
