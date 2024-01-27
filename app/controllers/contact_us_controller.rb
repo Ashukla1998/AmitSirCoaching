@@ -7,7 +7,6 @@ class ContactUsController < ApplicationController
     def create
       @contact = ContactUs.new(contact_params)
       if @contact.save
-        ContactUsMailer.contact_email(@contact).deliver_now
         flash[:success] = 'Message sent successfully!'
         redirect_to contact_us_thank_you_path
       else
