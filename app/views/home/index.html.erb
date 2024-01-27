@@ -35,6 +35,33 @@
             line-height: 1.6;
             color: #555;
         }
+
+        .image-description {
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        max-width: 100%;
+    }
+
+    .image-description img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px 8px 0 0; /* Rounded corners for the top */
+    }
+
+    .opening-announcement {
+        padding: 20px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .opening-announcement {
+            padding: 10px;
+        }
+    }
+
 </style>
 
 <div class="marquee-container" >
@@ -43,6 +70,44 @@
 
 <br>
 <br>
+
+<div class="image-description">
+    <%= image_tag "amitcoaching.jpg" %>
+    <div class="opening-announcement" style="color: black;background-color: white;">
+        <h2>🌟 Exciting News! 🌟</h2>
+        <p>We are thrilled to announce the grand opening of our brand new coaching center! 🎉</p>
+
+        <h3>📚 Unlock Your Potential with AmitCoaching 📚</h3>
+        <p>Embark on a journey of knowledge, growth, and success. Our dedicated team of educators is committed to providing top-notch guidance and support to help you achieve your goals.</p>
+
+        <p><strong>🏫 Location:</strong> Near Madhav Excellence School Ater Road Porsa<br>
+        <strong>📆 Opening Date:</strong> 01/02/2024<br>
+
+        <p>Come and discover a learning environment designed to inspire, motivate, and empower. Whether you're preparing for exams, enhancing your skills, or pursuing a passion, we've got you covered.</p>
+
+        <p><strong>🌐 Our Offerings:</strong></p>
+        <ul>
+            <li>Navodaya,Sainik</li>
+            <li>Personalized Coaching</li>
+            <li>State-of-the-Art Facilities</li>
+        </ul>
+
+        <p><strong>👩‍🏫 Meet Our Experienced Instructors:</strong></p>
+        <ul>
+            <li>Amit Singh Tomar </li>
+        </ul>
+
+        <p>Don't miss the chance to be part of this educational journey. We look forward to welcoming you to [Your Coaching Center Name]!</p>
+
+        <p>For inquiries and registration, contact us at:</p>
+        <p><strong>📞 Phone:</strong> 8349902861<br>
+
+        <p>Get ready to elevate your learning experience! 🚀</p>
+
+        <p># AmitCoaching #GrandOpening #EducationForAll</p>
+    </div>
+</div>
+
 
 <section>
     <h2>About Us</h2>
@@ -60,5 +125,6 @@
         At AmitCoaching, we firmly believe in the power of personalized guidance and support. Our commitment is to empower individuals on their journey towards personal and professional growth. The transformative experiences shared by our clients reflect the core values we uphold — a dedication to fostering positive change and unlocking the full potential within each individual. Through tailored coaching, we strive to make a meaningful impact on lives, helping our clients achieve their goals and navigate towards success.
     </p>
 </section>
+
 
 
